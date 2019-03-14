@@ -1,4 +1,4 @@
-import { DateTime } from "luxon";
+import { DateTime, Duration } from "luxon";
 
 interface LuxonDateDuration {
   years?: number;
@@ -15,6 +15,8 @@ type LuxonDateUnits =
   | "weeks"
   | "month"
   | "months";
+
+type LuxonDateDiffUnits = LuxonDateUnits | "day" | "days";
 
 export enum Comparison {
   Before = -1,
@@ -98,6 +100,14 @@ export default class LuxonDate {
     } else {
       return Comparison.Equal;
     }
+  }
+
+  public diff(
+    otherDate: LuxonDate,
+    unit: LuxonDateDiffUnits | LuxonDateDiffUnits[] = "days",
+    opts: object = {}
+  ): Duration {
+    return this.wrappedDateTime.diff(otherDate.wrappedDateTime, unit, opts);
   }
 
   public valueOf(): number {
