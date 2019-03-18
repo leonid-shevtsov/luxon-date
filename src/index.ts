@@ -58,6 +58,7 @@ export default class LuxonDate {
   public day: number;
   public weekday: number;
   public weekNumber: number;
+  public isValid: boolean;
 
   private wrappedDateTime: DateTime;
 
@@ -68,6 +69,7 @@ export default class LuxonDate {
     this.day = this.wrappedDateTime.day;
     this.weekday = this.wrappedDateTime.weekday;
     this.weekNumber = this.wrappedDateTime.weekNumber;
+    this.isValid = this.wrappedDateTime.isValid;
   }
 
   public toString() {
