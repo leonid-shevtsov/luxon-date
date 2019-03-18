@@ -45,6 +45,10 @@ export default class LuxonDate {
     return new LuxonDate(DateTime.fromFormat(ds, "yyyy-MM-dd"));
   }
 
+  public static fromJSDate(d: Date): LuxonDate {
+    return new LuxonDate(DateTime.fromJSDate(d));
+  }
+
   public static compare(a: LuxonDate, b: LuxonDate): number {
     return a.compare(b);
   }
@@ -128,5 +132,9 @@ export default class LuxonDate {
 
   public castToDB(): string {
     return this.wrappedDateTime.toFormat("yyyy-MM-dd");
+  }
+
+  public toJSDate(): Date {
+    return this.wrappedDateTime.toJSDate();
   }
 }
