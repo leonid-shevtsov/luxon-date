@@ -80,6 +80,10 @@ export default class LuxonDate {
     return this.wrappedDateTime.toFormat(formatString);
   }
 
+  public toDateTime() {
+    return this.wrappedDateTime;
+  }
+
   public startOf(unit: LuxonDateUnits): LuxonDate {
     return new LuxonDate(this.wrappedDateTime.startOf(unit));
   }
