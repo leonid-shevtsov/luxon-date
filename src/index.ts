@@ -21,7 +21,7 @@ type LuxonDateDiffUnits = LuxonDateUnits | "day" | "days";
 export enum Comparison {
   Before = -1,
   Equal = 0,
-  After = 1
+  After = 1,
 }
 
 export default class LuxonDate {
@@ -37,7 +37,7 @@ export default class LuxonDate {
     return LuxonDate.fromDateTime(DateTime.local());
   }
 
-  public static isDate(o: any): boolean {
+  public static isDate(o: any): o is LuxonDate {
     return o instanceof LuxonDate;
   }
 
