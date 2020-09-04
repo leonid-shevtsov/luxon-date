@@ -1,6 +1,6 @@
 {
   "name": "luxon-date",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "Date abstraction for Luxon",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
